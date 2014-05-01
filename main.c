@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "mpc.h"
 
 #include <editline/readline.h>
 
@@ -20,10 +21,7 @@ char * readline(char * prompt){
 
 #else
 
-void add_history(char * unused ){}
-
 #endif
-
 
 int main(int argc, char ** argv){
 
@@ -33,7 +31,7 @@ int main(int argc, char ** argv){
     mpc_parser_t* Lispy = mpc_new("lispy");
 
     mpca_lang(MPCA_LANG_DEFAULT,
-            "
+            "                                                         \
             number    : /-?[0-9]+/;                                   \
             operator  : '+' | '-' | '*' | '/';                        \
             expression: <number> | '(' <operator> <expression>+ ')';  \
