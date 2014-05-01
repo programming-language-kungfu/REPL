@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "mpc.h"
 
-#include <editline/readline.h>
-
 #ifdef _WIN32
 
 #include <string.h>
@@ -19,7 +17,11 @@ char * readline(char * prompt){
     return copy;
 }
 
+void add_history(Char * unused){}
+
 #else
+
+#include <editline/readline.h>
 
 #endif
 
